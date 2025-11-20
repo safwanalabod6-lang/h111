@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>نظام الفواتير</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+  <h1>نظام الفواتير</h1>
+
+  <section class="stats">
+    <div class="stat"><strong>إجمالي الدين:</strong> <span id="totalDebt">0</span></div>
+    <div class="stat"><strong>المدفوع:</strong> <span id="totalPaid">0</span></div>
+  </section>
+
+  <section class="form">
+    <h2>إنشاء / تعديل فاتورة</h2>
+    <div class="row"><label>رقم الفاتورة</label><input id="invoiceNumber" placeholder="00001"></div>
+    <div class="row"><label>اسم العميل</label><input id="clientName" placeholder="اسم العميل"></div>
+    <div class="row"><label>التاريخ</label><input type="date" id="invoiceDate"></div>
+    <div class="row"><label>الحالة</label>
+      <select id="invoiceStatus">
+        <option value="debt">دين</option>
+        <option value="paid">مدفوع</option>
+      </select>
+    </div>
+
+    <table id="itemsTable" class="items">
+      <thead><tr><th>اسم القطعة</th><th>السعر</th><th>الكمية</th><th>الإجمالي</th><th>حذف</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <button id="addItemBtn">إضافة عنصر</button>
+    <div class="row total"><strong>المجموع النهائي:</strong> <span id="totalSum">0</span></div>
+    <div class="actions">
+      <button id="saveInvoiceBtn">حفظ الفاتورة</button>
+      <button id="clearFormBtn">تفريغ النموذج</button>
+    </div>
+  </section>
+
+  <section class="list">
+    <h2>قائمة الفواتير</h2>
+    <input id="searchInput" placeholder="بحث بالرقم أو اسم العميل">
+    <div id="invoicesList"></div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
